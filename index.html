@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornal Raízes Paranaenses</title>
+    <style>
+        body {
+            background-color: #2b2b2b;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: #1a1a1a;
+            scroll-behavior: smooth;
+        }
+
+        /* Menu Fixo de Navegação */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #111111;
+            padding: 12px 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        }
+
+        .nav-menu a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 12px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #c49a5b;
+        }
+
+        /* Container das Folhas */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+
+        /* Estrutura das Páginas do Jornal */
+        .folha {
+            background-color: #fbf8f0; 
+            width: 850px;
+            min-height: 750px;
+            margin: 20px 0;
+            padding: 40px 50px 70px 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border: 1px solid #d3cbb7;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Cabeçalho de Imprensa */
+        .topo-jornal {
+            text-align: center;
+            border-bottom: 4px double #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .topo-jornal h1 {
+            font-size: 46px;
+            margin: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+        }
+
+        .topo-jornal p {
+            font-style: italic;
+            font-size: 14px;
+            margin: 4px 0;
+            color: #444;
+        }
+
+        .manchete {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-transform: uppercase;
+            color: #000;
+        }
+
+        .colunas {
+            column-count: 2;
+            column-gap: 40px;
+            text-align: justify;
+        }
+
+        .subtitulo {
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #1a1a1a;
+            margin-top: 0;
+            margin-bottom: 12px;
+            padding-bottom: 3px;
+            color: #0d233a;
+            text-transform: uppercase;
+        }
+
+        /* Formatação de Tópicos */
+        .lista-topicos {
+            padding-left: 15px;
+            margin: 0 0 15px 0;
+        }
+
+        .lista-topicos li {
+            margin-bottom: 10px;
+            font-size: 14.5px;
+            line-height: 1.4;
+            list-style-type: square;
+        }
+
+        .lista-topicos strong {
+            color: #000;
+        }
+
+        /* Rodapé de Navegação */
+        .rodape-folha {
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+            right: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #b5ab96;
+            padding-top: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .btn-proximo {
+            background: #1a1a1a;
+            color: #fbf8f0;
+            padding: 6px 14px;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-proximo:hover {
+            background: #c49a5b;
+            color: #111;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(0,0,0,0.02);
+        }
+
+        th, td {
+            border: 1px solid #1a1a1a;
+            padding: 8px;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        th { 
+            background: #e6dfcc;
+            text-transform: uppercase;
+        }
+
+        .bloco-destaque {
+            background: #ebdcb9;
+            padding: 12px;
+            border-left: 4px solid #1a1a1a;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-menu">
+        <a href="#folha1">Capa</a>
+        <a href="#folha2">Cultura Africana</a>
+        <a href="#folha3">Imigração</a>
+        <a href="#folha4">Migração Interna</a>
+        <a href="#folha5">Conflitos</a>
+        <a href="#folha6">Economia</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="folha1" class="folha">
+            <div class="topo-jornal">
+                <p>O Resgate da Nossa Memória Coletiva e Identidade Regional</p>
+                <h1>Raízes Paranaenses</h1>
+                <p>Edição Especial Histórica Documental</p>
+            </div>
+
+            <div class="manchete">
+                A Construção Humana do Paraná: Uma Viagem Pelos Povos que Moldaram o Nosso Chão
+            </div>
+
+            <div class="colunas">
+                <h2 class="subtitulo">Nota Editorial</h2>
+                <ul class="lista-topicos">
+                    <li><strong>Propósito da Edição:</strong> Investigar e dar protagonismo à composição humana que colonizou, trabalhou e resisteu em solo paranaense desde os primórdios.</li>
+                    <li><strong>Análise Crítica:</strong> Romper com visões simplistas do passado, evidenciando o impacto de correntes migratórias internacionais e interestaduais.</li>
+                    <li><strong>Foco Documental:</strong> Apresentar por meio de tópicos informativos os ciclos de riqueza, os episódios de guerra civil e a forte herança dos trabalhadores escravizados e colonos.</li>
+                    <li><strong>História Viva:</strong> Compreender como a mistura de culturas e os desafios climáticos e econômicos moldaram as cidades que conhecemos hoje.</li>
+                </ul>
+            </div>
+
+            <div class="rodape-folha">
+                <span>Página 01</span>
+                <a href="#folha2" class="btn-proximo">Acessar Página 02 →</a>
+            </div>
+        </section>
+
+        <section id="folha2" class="folha">
+            <div class="topo-jornal">
+                <h1>Raízes Paranaenses</h1>
+                <p>História Social e Identidade Negra</p>
+            </div>
+            <h2 class="manchete">A Presença Africana: Força, Trabalho e Resistência</h2>
+
+            <div class="colunas">
+                <h2 class="subtitulo">Tópicos de Impacto</h2>
+                <ul class="lista-topicos">
+                    <li><strong>Base Econômica Inicial:</strong> Homens e mulheres escravizados compuseram o motor da economia paranaense entre os séculos XVII e XIX, atuando diretamente no litoral e nos campos de criação.</li>
+                    <li><strong>Setores de Atuação:</strong> Trabalho pesado focado na pecuária extensiva nos Campos Gerais, no transporte e na colheita pioneira dos ervais nativos de mate.</li>
+                    <li><strong>Cultura e Fé:</strong> Introdução de ritmos afro-brasileiros fundamentais, consolidação das Festas de Congada na Lapa e a batida estrutural do fandango caiçara litorâneo.</li>
+                    <li><strong>Legado na Culinária:</strong> Influência marcante no uso do feijão, técnicas de cozimento de ensopados e heranças de subsistência na dieta regional.</li>
+                </ul>
+
+                <div class="bloco-destaque">
+                    <strong>Dados Históricos de 1798:</strong> Registros demográficos da época colonial revelam que a população preta escravizada superava formalmente o número de indígenas mapeados nos vilarejos de Curitiba e Paranaguá.
+                </div>
+            </div>
+
+            <div class="rodape-folha">
+                <span>Página 02</span>
+                <a href="#folha3" class="btn-proximo">Acessar Página 03 →</a>
+            </div>
+        </section>
+
+        <section id="folha3" class="folha">
+            <div class="topo-jornal">
+                <h1>Raízes Paranaenses</h1>
+                <p>O Mosaico das Colonizações Estrangeiras</p>
+            </div>
+            <h2 class="manchete">Imigração Europeia e Asiática no Século XIX e XX</h2>
+
+            <div class="colunas">
+                <h2 class="subtitulo">As Principais Correntes</h2>
+                <ul class="lista-topicos">
+                    <li><strong>Eslavos (Poloneses e Ucranianos):</strong> Colonizaram a região Centro-Sul e Curitiba. Introduziram técnicas de arquitetura em troncos encaixados, o plantio de centeio e a arte tradicional das pêssankas.</li>
+                    <li><strong>Italianos:</strong> Impulsionaram a produção de vinho, a horticultura e a gastronomia em núcleos coloniais pioneiros como o atual bairro de Santa Felicidade.</li>
+                    <li><strong>Alemães:</strong> Estruturaram as primeiras serrarias, oficinas de metalurgia rudimentar e cooperativas de produção, além de influenciar a organização urbana.</li>
+                    <li><strong>Japoneses:</strong> Concentraram-se na região Norte e Norte Pioneiro (Assaí e Londrina), revolucionando técnicas de horticultura e expandindo a lavoura cafeeira comercial.</li>
+                </ul>
+            </div>
+
+            <div class="rodape-folha">
+                <span>Página 03</span>
+                <a href="#folha4" class="btn-proximo">Acessar Página 04 →</a>
+            </div>
+        </section>
+
+        <section id="folha4" class="folha">
+            <div class="topo-jornal">
+                <h1>Raízes Paranaenses</h1>
+                <p>Migrações Internas e Integração Nacional</p>
+            </div>
+            <h2 class="manchete">O Fluxo de Brasileiros e a Era do Tropeirismo</h2>
+
+            <div class="colunas">
+                <h2 class="subtitulo">A Fronteira Agrícola</h2>
+                <ul class="lista-topicos">
+                    <li><strong>Paulistas e Mineiros:</strong> Avançaram massivamente sobre as matas virgens do Norte do Paraná a partir de 1920, atraídos pela alta fertilidade da "terra roxa" para o plantio de café.</li>
+                    <li><strong>Nordestinos:</strong> Mão de obra essencial que migrou para as frentes de trabalho rural no Norte, auxiliando na colheita e na fundação de novas cidades planejadas.</li>
+                    <li><strong>Gaúchos e Catarinenses:</strong> Ocuparam o Oeste e o Sudoeste do Paraná, trazendo a tradição do trato com grandes lavouras de grãos, a cultura do chimarrão e o churrasco.</li>
+                </ul>
+
+                <h2 class="subtitulo">O Legado Tropeiro</h2>
+                <p>No século XIX, as caravanas de tropeiros transportavam rebanhos do Sul para São Paulo. Esse trânsito contínuo gerou pousos comerciais permanentes que evoluíram para cidades históricas importantes, como Castro, Lapa e Ponta Grossa.</p>
+            </div>
+
+            <div class="rodape-folha">
+                <span>Página 04</span>
+                <a href="#folha5" class="btn-proximo">Acessar Página 05 →</a>
+            </div>
+        </section>
+
+        <section id="folha5" class="folha">
+            <div class="topo-jornal">
+                <h1>Raízes Paranaenses</h1>
+                <p>Conflitos Militares e Movimentos Sociais</p>
+            </div>
+            <h2 class="manchete">Território em Chamas: As Guerras Paranaenses</h2>
+
+            <div class="colunas">
+                <h2 class="subtitulo">Revolução Federalista</h2>
+                <ul class="lista-topicos">
+                    <li><strong>O Confronto Civil:</strong> Disputa política violenta de 1893 entre federalistas (Maragatos) e republicanos legalistas (Pica-paus).</li>
+                    <li><strong>O Cerco da Lapa:</strong> Resistência militar de forças locais que travaram o avanço maragato por 26 dias em 1894, dando tempo para a defesa da República.</li>
+                    <li><strong>Barão do Serro Azul:</strong> Maior produtor de mate, executado após pagar resgate aos rebeldes para impedir o saque e bombardeio de Curitiba.</li>
+                </ul>
+
+                <h2 class="subtitulo">Guerra do Contestado</h2>
+                <ul class="lista-topicos">
+                    <li><strong>Disputa de Território:</strong> Conflito socio-religioso ocorrido entre 1912 e 1916 na fronteira entre os estados do Paraná e Santa Catarina.</li>
+                    <li><strong>Expulsão de Camponeses:</strong> Grandes companhias internacionais ganharam terras para construir ferrovias e explorar madeira, desalojando os moradores locais.</li>
+                    <li><strong>Resistência Messiânica:</strong> Sem terras, os camponeses uniram-se em torno de monges messiânicos (como o Monge João Maria) para lutar pelos seus direitos.</li>
+                </ul>
+            </div>
+
+            <div class="rodape-folha">
+                <span>Página 05</span>
+                <a href="#folha6" class="btn-proximo">Acessar Página 06 →</a>
+            </div>
+        </section>
+
+        <section id="folha6" class="folha">
+            <div class="topo-jornal">
+                <h1>Raízes Paranaenses</h1>
+                <p>Evolução Financeira e Transformações Climatológicas</p>
+            </div>
+            <h2 class="manchete">Ciclos de Produção e a Ruína do Ouro Verde</h2>
+
+            <div class="colunas">
+                <p>Abaixo estão ordenados os três grandes eixos econômicos que financiaram o enriquecimento e o desenvolvimento das estruturas urbanas do Paraná:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ciclo Econômico</th>
+                            <th>Auge Comercial</th>
+                            <th>Transformação Espacial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Erva-Mate</strong></td>
+                            <td>Final do Séc. XIX</td>
+                            <td>Ergueu palacetes em Curitiba e viabilizou a Ferrovia do Litoral.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Madeira</strong></td>
+                            <td>Início do Séc. XX</td>
+                            <td>Extração em massa da Araucária para abastecer o mercado paulista.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Café</strong></td>
+                            <td>1930 a 1975</td>
+                            <td>Provocou o surgimento rápido das potências urbanas de Londrina e Maringá.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="subtitulo">A Geada Negra de 1975</h2>
+                <ul class="lista-topicos">
+                    <li><strong>O Fenômeno:</strong> Na madrugada de 18 de julho de 1975, uma onda intensa de frio queimou os arbustos de café do Norte do estado até a raiz.</li>
+                    <li><strong>Êxodo Rural:</strong> Pequenos proprietários rurais faliram da noite para o dia, forçando a migração em massa de trabalhadores para os centros urbanos.</li>
+                    <li><strong>Substituição Agrícola:</strong> Fim do manejo manual do café e início da transição imediata para a agricultura mecanizada baseada em grãos (soja e milho).</li>
+                </ul>
+            </div>
+
+            <div class="rodape-folha">
+                <span>Página 06 (Fim do Projeto)</span>
+                <a href="#folha1" class="btn-proximo">Voltar para a Capa ↑</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
